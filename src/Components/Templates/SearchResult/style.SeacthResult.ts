@@ -1,4 +1,4 @@
-import { SCREEN_MD_MIN } from "Const/index";
+import { SCREEN_MD_MAX, SCREEN_MD_MIN } from "Const/index";
 import styled from "styled-components";
 
 export const SearchResultDiv = styled.div`
@@ -23,4 +23,8 @@ text-align: center;
 font-weight: 600;
 font-size: 14px;
 background: #f5f5f7;
+
+@media all and (max-width: ${SCREEN_MD_MAX}px) {
+  margin:32px 0;
+  }
 `
