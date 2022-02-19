@@ -41,7 +41,7 @@
 </tr>
 <tr>
 <td>신원규</td>
-<td> 자동완성 / </td>
+<td> 검색어 자동완성 구현 / dev 버전 Json-Server, React server 설정 / 문자열 유사도 기반 검색어 추천기능 구현 </td>
 </tr>
 <tr>
 <td>김서윤</td>
@@ -115,10 +115,12 @@ Rest API가 같은 폴더 안에 존재하고, jsonData와 craco start가 동시
 <br/>
 
 ### 자동완성
-
+  Input tag의 value를 subString으로 가지는 Product.name을 순회하여 찾아, 검색량 기준으로 정렬해 상위 5개의 결과를 검색창이 Focused일때 검색창 밑에 render 시켜줍니다.<br/>
+  한번 코드가 실행될때 500개가 넘는 길이의 리스트를 순회해야하므로 너무 많은 리렌더 방지를 위해 Throttling를 구현하였습니다.<br/>
+  동시에, OnChange 이벤트는 실시간으로 렌더되어 UX의 저하는 방지하였습니다.
 <br/>
 
-### 추천 검색어
+### ✨[추천 검색어](https://www.notion.so/EnergyBalance-83203fb9ab6d43da87ab2292117929f6)
 
 <br/>
 
@@ -128,35 +130,7 @@ Rest API가 같은 폴더 안에 존재하고, jsonData와 craco start가 동시
 
 1. [string-similarity](https://www.npmjs.com/package/string-similarity)
   
-문자열의 유사성을 계산할 수 있는 라이브러리입니다. 검색어와 데이터와 100% 일치하지 않아도 유사성 기준으로 Select 하기 위해 채택하였습니다.
-
-해당 기술을 위해 위의 라이브러리와 [levenshtein method](https://lovit.github.io/nlp/2018/08/28/levenshtein_hangle/) 중에서 고민을 했으나, 테스트 결과 Sorensen–Dice coefficient 기반인 `stringSimilarity`가 더 나은 결과를 보였습니다.
-
-```js
-const input = '마그네슘',
-
-// levenshtein method
-  
-const levenshtein = [
-  {0, name: '마그네슘정', similarity: 2},
-  {1, name: '키즈칼슘', similarity: 3},
-  {2, name: '코어업', similarity: 4},
-  {3, name: '코준', similarity: 4},
-  {4, name: '코케어', similarity: 4},
-  {5, name: '코큐넥신', similarity: 4},
-]
-
-// Sorensen–Dice coefficient(stringSimilarity)
-  
-const stringSimilarity = [
- {0, name: '마그네슘정', similarity: 0.5714285714285714},
- {1, name: '트리플 마그네슘', similarity: 0.4444444444444444},
- {2, name: '키즈칼슘마그네슘디', similarity: 0.36363636363636365},
- {3, name: '탑칼슘마그네슘골드', similarity: 0.36363636363636365},
- {4, name: '트리엔 칼슘마그네슘', similarity: 0.36363636363636365},
- {5, name: '키즈비타칼슘마그네슘', similarity: 0.3333333333333333},
-]
-```
+문자열의 유사성을 계산할 수 있는 라이브러리입니다.
 
 2. [Hangul.js](https://github.com/e-/Hangul.js)
 
@@ -228,7 +202,7 @@ data.filter((el) => { // 전체 데이터에서 `ㅎㅅ`초성을 가진 상품�
 
 🎈권영채 :
 
-🎹신원규 :
+🎹신원규 : Throttling 코드를 구현하는 방법이 흥미로웠습니다. 프론트 업무에서는 잘 다루지 않는 서치로직을 구현하는 경험도요. 
 
 🎇김서윤 :
 
