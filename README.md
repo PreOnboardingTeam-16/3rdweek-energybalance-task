@@ -136,7 +136,7 @@ $ npm run dev
 
 ## E2E Test(Cypress)
 
-![Animation](https://youtu.be/Vs6AEZB69_c)
+![Animation](https://images.velog.io/images/yeonbee/post/90610a0c-5147-4030-8544-a9da4af5b92d/cypresstestgif.gif)
 
 `cypress`를 통해 주요 로직을 테스트하였습니다.
 
