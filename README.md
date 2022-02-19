@@ -41,7 +41,7 @@
 </tr>
 <tr>
 <td>신원규</td>
-<td> 검색어 자동완성 구현 / dev 버전 Json-Server, React server 설정 / 문자열 유사도 기반 검색어 추천기능 구현 </td>
+<td style="font-size:14px"> 검색어 자동완성 구현 / dev 버전 Json-Server, React server 설정 / 문자열 유사도 기반 검색어 추천기능 구현 </td>
 </tr>
 <tr>
 <td>김서윤</td>
