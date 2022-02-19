@@ -47,6 +47,7 @@ const SearchResult = ({
           : selectedSort === C.sortMenu.highPrice
           ? newState.sort((a, b) => b.price - a.price)
           : newState.sort((a, b) => a.price - b.price);
+      setIsConsonant(false)
       setFilteredData(newState);
       return;
     }
@@ -71,7 +72,7 @@ const SearchResult = ({
 
       //유사도에 맞춰 우선정렬
       newState = newState.sort((a, b) => b.similarity - a.similarity);
-      searchInput.trim().length !== 0 && setIsConsonant(true)
+      setIsConsonant(true) 
       setFilteredData(newState);
       return;
     }

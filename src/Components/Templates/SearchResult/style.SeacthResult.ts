@@ -17,7 +17,10 @@ export const ContainerWrapper = styled.div`
 `;
 
 export const Info = styled.div`
-padding: 10px 14px;
+padding: 10px 20px;
+margin:41.5px 0;
 text-align: center;
 font-weight: 600;
+font-size: 14px;
+background: #f5f5f7;
 `
