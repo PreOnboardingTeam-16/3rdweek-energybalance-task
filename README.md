@@ -1,6 +1,7 @@
 # 3rdweek-energybalance-task
 
-## [Go Demo🚀](https://energybalancee.herokuapp.com/)
+### [Go Demo🚀](https://energybalancee.herokuapp.com/)
+### [Figma🍎](https://www.figma.com/file/6TcoVKgjmlWfYzTfCwEMLl/%EC%97%90%EB%84%88%EC%A7%80-%EB%B0%B8%EB%9F%B0%EC%8A%A4-%EA%B8%B0%EC%97%85-%EA%B3%BC%EC%A0%9C-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%98%88%EC%8B%9C?node-id=0%3A1)
 
 ## Member
 
@@ -36,7 +37,7 @@
 </tr>
 <tr>
 <td>권영채</td>
-<td> 프로젝트 매니지먼트 /  </td>
+<td> 프로젝트 매니지먼트 / 피그마 제작 / 카테고리,정렬,검색어에 따른 데이터 필터링 </td>
 </tr>
 <tr>
 <td>신원규</td>
@@ -66,10 +67,6 @@
 ### ✅검색어 추천
 
 ### ✅초성 검색
-
-
-
-
 
 
 <br/>
