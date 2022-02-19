@@ -146,7 +146,7 @@ const stringSimilarity = [
 // disassemble method는 문자열을 분해하여 배열:string[]로 return합니다.
 Hangul.disassemble("가나다"); // ['ㄱ','ㅏ','ㄴ','ㅏ','ㄷ','ㅏ']
 // disassemble method의 2번째 인자는 `grouped` 옵션입니다. `true`일때는 2차원 배열로 변환됩니다.
-Hangul.disassemble("에너지", true); // [['ㅇ', 'ㅔ'], ['ㄴ', 'ㅓ'], ['ㅈ', 'ㅣ',]]
+Hangul.disassemble("에너지", true); // [['ㅇ', 'ㅔ'], ['ㄴ', 'ㅓ'], ['ㅈ', 'ㅣ']]
 // isConsonantAll method는 문자열이 자음만으로 이루어져 있는지를 return합니다.
 Hangul.isConsonantAll("ㅇㄴㅈ"); // true
 ```
@@ -155,6 +155,8 @@ Hangul.isConsonantAll("ㅇㄴㅈ"); // true
 
 ```js
 const input = "ㅎㅅ"; // 검색할 문자 'ㅎㅅ'
+  
+if(Hangul.isConsonantAll(input)) // input이 초성으로 이루어져 있으면
 
 data.filter((el) => { // 전체 데이터에서 `ㅁㄱ`초성을 가진 상품을 필터링하여 return합니다
   const strArr: string[] = []; // 반복문 안에서 초성들을 결합할 배열변수입니다.
