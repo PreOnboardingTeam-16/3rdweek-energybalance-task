@@ -33,14 +33,16 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
+    "test": "cypress open",
     "eject": "craco eject",
-    "dev": "concurrently \"craco start\" \"npx json-server MockServer/db.json --port 4000\" "
+    "dev": "concurrently \"craco start\" \"npx json-server MockServer/db.json --port 4000\" ",
+    "cypress": "cypress open"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:cypress/recommended"
     ]
   },
   "browserslist": {
@@ -56,6 +58,7 @@
     ]
   },
   "devDependencies": {
-    "craco-alias": "^3.0.1"
+    "craco-alias": "^3.0.1",
+    "cypress": "^9.5.0"
   }
 }

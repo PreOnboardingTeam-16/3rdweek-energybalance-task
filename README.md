@@ -120,7 +120,11 @@ $ npm start
    ├─Components
    │  ├─Pages
    │  │  └─Main
-   │  └─Templates
+   │  ├─Templates
+   │  ├─Nav
+   │  ├─SearchBar
+   │  └─SearchResult
+   ├─Const
    ├─Style
    ├─Types
    └─UI
@@ -129,6 +133,13 @@ $ npm start
      └─Organisms
 
 ```
+
+## E2E Test(Cypress)
+
+![Animation](https://youtu.be/Vs6AEZB69_c)
+
+`cypress`를 통해 주요 로직을 테스트하였습니다.
+
 
 ## 프로젝트 후기
 
