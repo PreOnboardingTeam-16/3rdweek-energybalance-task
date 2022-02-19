@@ -1,0 +1,7 @@
+{
+  "projectId": "oke9ti",
+  "component": {
+    "componentFolder": "Components",
+    "testFiles": "**/*spec.{js,jsx,ts,tsx}"
+  }
+}

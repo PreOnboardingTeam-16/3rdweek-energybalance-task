@@ -27,7 +27,7 @@ const SearchBar = ({JsonData, searchInput, setSearchInput}:SearchBarProps):JSX.E
         setTimeout( async() => {
             const temp:T.JsonDataType[] = [];
             JsonData.forEach(ele => {
-                if(ele.productName.includes(inputState)){
+                if(ele.productName.toLowerCase().includes(inputState.toLowerCase())){
                 temp.push(ele);
                 }});
             temp.sort((a, b) => b.searchAmount - a. searchAmount);

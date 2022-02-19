@@ -48,6 +48,15 @@ const RecommendWords = ({
     })
   );
   stringSimilarityList.sort((a, b) => b.similarity - a.similarity);
+  const handleRecommendButton: T.onClickRecommendhandler = (
+    setSearchInput,
+    inputState,
+    setSelectedCategory,
+    selectedCategory
+  ) => {
+    setSearchInput(inputState);
+    setSelectedCategory(selectedCategory);
+  };
 
   return (
     <>
@@ -57,10 +66,14 @@ const RecommendWords = ({
       <S.ButtonBox>
         {stringSimilarityList.slice(0, 4).map((ele, idx) => (
           <S.RecommendButton
-            onClick={() => {
-              setSearchInput(ele.name);
-              setSelectedCategory(Category.all);
-            }}
+            onClick={() =>
+              handleRecommendButton(
+                setSearchInput,
+                ele.name,
+                setSelectedCategory,
+                Category.all
+              )
+            }
             key={idx}
           >
             {ele.name.replace(/\n/g, " ").substring(0, 11)}
