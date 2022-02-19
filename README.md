@@ -187,8 +187,8 @@ data.filter((el) => { // 전체 데이터에서 `ㅎㅅ`초성을 가진 상품�
       index === 0 && strArr.push(item); // 각 배열의 0번 인덱스['ㅎ'],['ㅅ']를 strArr에 저장합니다.
     });
   });
-  // 제품명에 영어가 포함될 시 대/소문자가 같이 검색되기 위해 toLowerCase()를 사용하였습니다.
-  return strArr.join("").trim().toLowerCase().indexOf(searchInput) !== -1; // '홍삼'을 return 합니다.
+
+  return strArr.join("").trim().indexOf(searchInput) !== -1; // '홍삼'을 return 합니다.
 });
 ```
 
