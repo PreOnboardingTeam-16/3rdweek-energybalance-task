@@ -108,7 +108,8 @@ $ npm run dev
 기술 구현을 위해 2가지의 라이브러리를 사용했습니다.
 
 1. [string-similarity](https://www.npmjs.com/package/string-similarity)
-   문자열의 유사성을 계산할 수 있는 라이브러리입니다. 검색어와 데이터와 100% 일치하지 않아도 유사성 기준으로 Select 하기 위해 채택하였습니다.
+  
+문자열의 유사성을 계산할 수 있는 라이브러리입니다. 검색어와 데이터와 100% 일치하지 않아도 유사성 기준으로 Select 하기 위해 채택하였습니다.
 
 해당 기술을 위해 위의 라이브러리와 [levenshtein method](https://lovit.github.io/nlp/2018/08/28/levenshtein_hangle/) 중에서 고민을 했으나, 테스트 결과 Sorensen–Dice coefficient 기반인 `stringSimilarity`가 더 나은 결과를 보였습니다.
 
@@ -158,7 +159,7 @@ const input = "ㅎㅅ"; // 검색할 문자 'ㅎㅅ'
   
 if(Hangul.isConsonantAll(input)) // input이 초성으로 이루어져 있으면
 
-data.filter((el) => { // 전체 데이터에서 `ㅁㄱ`초성을 가진 상품을 필터링하여 return합니다
+data.filter((el) => { // 전체 데이터에서 `ㅎㅅ`초성을 가진 상품을 필터링하여 return합니다
   const strArr: string[] = []; // 반복문 안에서 초성들을 결합할 배열변수입니다.
   // el = '홍삼'
   Hangul.disassemble(el.productName, true).map((itemArr) => { // [ ['ㅎ','ㅗ','ㅇ'],['ㅅ','ㅏ','ㅁ'] ]
