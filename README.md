@@ -49,7 +49,7 @@
 </tr>
 <tr>
 <td>지연비</td>
-<td> Nav바 / Data 가공 및 Json-Server 세팅 </td>
+<td> Nav바 / Data 가공 및 Json-Server 세팅 / E2E test </td>
 </tr>
 
 </table>
