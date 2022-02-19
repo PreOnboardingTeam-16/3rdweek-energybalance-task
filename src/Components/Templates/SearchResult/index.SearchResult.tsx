@@ -56,7 +56,14 @@ const SearchResult = ({
       // 문자열이 초성만 포함할 경우
       newState = newState.filter((el) => {
         const strArr: string[] = [];
+        
         Hangul.disassemble(el.productName, true).map((itemArr) => {
+          itemArr.map((item, index) => {
+            index === 0 && strArr.push(item);
+          });
+        });
+
+        Hangul.disassemble(el.brand, true).map((itemArr) => {
           itemArr.map((item, index) => {
             index === 0 && strArr.push(item);
           });
@@ -82,6 +89,8 @@ const SearchResult = ({
         ? newState.filter(
             (el) =>
               el.productName
+                .toLowerCase()
+                .indexOf(searchInput.toLowerCase()) !== -1 || el.brand
                 .toLowerCase()
                 .indexOf(searchInput.toLowerCase()) !== -1
           )
