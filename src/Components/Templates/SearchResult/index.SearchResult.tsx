@@ -47,6 +47,7 @@ const SearchResult = ({
           : selectedSort === C.sortMenu.highPrice
           ? newState.sort((a, b) => b.price - a.price)
           : newState.sort((a, b) => a.price - b.price);
+      setIsConsonant(false)
       setFilteredData(newState);
       return;
     }
@@ -55,7 +56,14 @@ const SearchResult = ({
       // 문자열이 초성만 포함할 경우
       newState = newState.filter((el) => {
         const strArr: string[] = [];
+        
         Hangul.disassemble(el.productName, true).map((itemArr) => {
+          itemArr.map((item, index) => {
+            index === 0 && strArr.push(item);
+          });
+        });
+
+        Hangul.disassemble(el.brand, true).map((itemArr) => {
           itemArr.map((item, index) => {
             index === 0 && strArr.push(item);
           });
@@ -71,7 +79,7 @@ const SearchResult = ({
 
       //유사도에 맞춰 우선정렬
       newState = newState.sort((a, b) => b.similarity - a.similarity);
-      searchInput.trim().length !== 0 && setIsConsonant(true)
+      setIsConsonant(true) 
       setFilteredData(newState);
       return;
     }
@@ -81,6 +89,8 @@ const SearchResult = ({
         ? newState.filter(
             (el) =>
               el.productName
+                .toLowerCase()
+                .indexOf(searchInput.toLowerCase()) !== -1 || el.brand
                 .toLowerCase()
                 .indexOf(searchInput.toLowerCase()) !== -1
           )
